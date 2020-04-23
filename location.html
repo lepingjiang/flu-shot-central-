@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Flu Shot Central - Location</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<style>
+		#hero {
+			background: url(assets/img/652145240.jpg);
+			background-size: cover;
+			background-position: center center;
+			height: 250px;
+			width: 100%
+		}
+
+		.overlay {
+			background: rgba(0, 0, 0, 0.2);
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.overlay div {
+			max-width: 600px;
+		}
+
+		#map {
+			height: 500px;
+			width: 100%
+		}
+
+		#description {
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 300;
+		}
+
+		#infowindow-content .title {
+			font-weight: bold;
+		}
+
+		#infowindow-content {
+			display: none;
+		}
+
+		#map #infowindow-content {
+			display: inline;
+		}
+
+		.pac-card {
+			margin: 10px 10px 0 0;
+			border-radius: 2px 0 0 2px;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			outline: none;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+			background-color: #fff;
+			font-family: Roboto;
+		}
+
+		#pac-container {
+			padding-bottom: 12px;
+			margin-right: 12px;
+		}
+
+		.pac-controls {
+			display: inline-block;
+			padding: 5px 11px;
+		}
+
+		.pac-controls label {
+			font-family: Roboto;
+			font-size: 13px;
+			font-weight: 300;
+		}
+
+		#pac-input {
+			background-color: #fff;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 300;
+			margin-left: 12px;
+			padding: 0 11px 0 13px;
+			text-overflow: ellipsis;
+			width: 95%;
+		}
+
+		#pac-input:focus {
+			border-color: #4d90fe;
+		}
+
+		#title {
+			color: #fff;
+			background-color: #4d90fe;
+			font-size: 25px;
+			font-weight: 500;
+			padding: 6px 12px;
+		}
+
+		#target {
+			width: 345px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!--navigation-->
+	<header style="z-index: 1">
+		<div class="container">
+			<h1><a href="index.html" id="logo"><img src="assets/img/ffclogo.svg" class="logo"></a></h1>
+			<button id="mb"><i class="fa fa-bars"></i></button>
+			<nav id="mediasc500">
+				<ul>
+					<li>
+						<a href="index.html">
+							<p class="titf">Home</p>
+						</a>
+					</li>
+					<li>
+						<a href="prevention.html">
+							<p class="titf">Prevention</p>
+						</a>
+					</li>
+					<li>
+						<a href="location.html" style="background: #dfe675">
+							<p class="titf">Location</p>
+						</a>
+					</li>
+				</ul>
+				<div class="search">
+					<form>
+						<lable>
+							<input class="sinput" id="idtext" type="text" placeholder="Search">
+						</lable>
+						<button class="sbutton" type="submit" value="Submit"><img src="assets/img/search.svg" class="simg">
+						</button>
+					</form>
+				</div>
+			</nav>
+
+		</div>
+	</header>
+
+	<!--hero-->
+	<div class="container" style="padding-top: 20px">
+		<div id="hero">
+			<div class="overlay">
+				<div class="p10 tc">
+					<p class="tcolor5">It's time to get the flu shot</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--text-->
+	<div class="container">
+		<div class="hpacccb tc p50" style=" width: 100%; padding-bottom: 20px">
+			Where can I get a flu vaccine?
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="hpaccc p10" style="padding-top: 0;">
+			Flu vaccines are offered in many doctor’s offices, clinics, health departments, pharmacies, and college health centers, as well as by many employers, and even in some schools.
+		</div>
+		<div class="hpaccc p10" style="padding-top: 0;">
+			Even if you don’t have a regular doctor or nurse, you can get a flu vaccine somewhere else, like a health department, pharmacy, urgent care clinic, and often your school, college health center, or workplace.
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="hpaccc tc p50" style=" width: 100%; padding-bottom: 20px">
+			This page was created to help you locate where you can get a flu vaccine. Make sure you get your flu shot central bandaid (include image) and spread the word on social media with the hashtag #FluShotCentral
+
+		</div>
+	</div>
+
+	<!--map-->
+	<div class="container">
+		<div id="map"></div>
+	</div>
+	<!--map search bar-->
+	<div class="rcontainer ">
+		<div class="m10w48 placeholder boxing" data-placeholder="">
+			<div class="hpacccb" style="color: white; background: #004F46; padding: 10px">
+				Location
+			</div>
+			<div class="lactex p10">
+				Enter an adreess or zip code
+			</div>
+			<input id="pac-input" class="controls text_id p10 sinput" type="text" value="Flu Shot " placeholder="Flu Shot+zip code" style="border-radius: 20px;margin-bottom: 10px">
+		</div>
+		<div class="m10w48 boxing p10">
+			<div class="hpacccb">
+				Partnered Location
+			</div>
+			<div class="lactex p10">
+				1. Walgreens <br>
+				250 Broadway, New York, NY 10007 2516 <br>
+				212-571-4511 Directions Website Uber <br>
+				Hours: Everyday 06:00 (AM)- 02:00 (AM)
+
+			</div>
+			<div class="lactex p10">
+				2. Access Community Health Center <br>
+				83 Maiden Lane 6th Fl , New York , NY 10038 <br>
+				212-895-3410 Directions Website Uber <br>
+				Hours: Open Monday through Friday Day time and evening hours available walk-in appointments available
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--maybe copyrighted?-->
+	<footer style="padding-top: 10px;">
+		<p class="tc a1 p5">&copy; 2020 Flu Shot Central by Team Wow.</p>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$('#mb').click(function() {
+			$('nav').slideToggle();
+		});
+
+		$(window).resize(function() {
+			if (window.innerWidth > 499) {
+				$('nav').show();
+			}
+		});
+	</script>
+	<script>
+		// This example adds a search box to a map, using the Google Place Autocomplete
+		// feature. People can enter geographical searches. The search box will return a
+		// pick list containing a mix of places and predicted search terms.
+
+		// This example requires the Places library. Include the libraries=places
+		// parameter when you first load the API. For example:
+		// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+		function initAutocomplete() {
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: {
+					lat: -33.8688,
+					lng: 151.2195
+				},
+				zoom: 13,
+				mapTypeId: 'roadmap'
+			});
+
+			// Create the search box and link it to the UI element.
+			var input = document.getElementById('pac-input');
+			var searchBox = new google.maps.places.SearchBox(input);
+
+			// Bias the SearchBox results towards current map's viewport.
+			map.addListener('bounds_changed', function() {
+				searchBox.setBounds(map.getBounds());
+			});
+
+			var markers = [];
+			// Listen for the event fired when the user selects a prediction and retrieve
+			// more details for that place.
+			searchBox.addListener('places_changed', function() {
+				var places = searchBox.getPlaces();
+
+				if (places.length == 0) {
+					return;
+				}
+
+				// Clear out the old markers.
+				markers.forEach(function(marker) {
+					marker.setMap(null);
+				});
+				markers = [];
+
+				// For each place, get the icon, name and location.
+				var bounds = new google.maps.LatLngBounds();
+				places.forEach(function(place) {
+					if (!place.geometry) {
+						console.log("Returned place contains no geometry");
+						return;
+					}
+					var icon = {
+						url: place.icon,
+						size: new google.maps.Size(71, 71),
+						origin: new google.maps.Point(0, 0),
+						anchor: new google.maps.Point(17, 34),
+						scaledSize: new google.maps.Size(25, 25)
+					};
+
+					// Create a marker for each place.
+					markers.push(new google.maps.Marker({
+						map: map,
+						icon: icon,
+						title: place.name,
+						position: place.geometry.location
+					}));
+
+					if (place.geometry.viewport) {
+						// Only geocodes have viewport.
+						bounds.union(place.geometry.viewport);
+					} else {
+						bounds.extend(place.geometry.location);
+					}
+				});
+				map.fitBounds(bounds);
+			});
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALRAm7mJFrCxDv6d6stwFdW-Kn7Rg30lM&libraries=places&callback=initAutocomplete" async defer></script>
+	<script>
+		function myGeeks() {
+			var txt = document.getElementsByClassName("text_id").placeholder;
+			document.getElementById("GFG").innerHTML = txt;
+		}
+	</script>
+</body></html>
