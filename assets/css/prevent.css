@@ -1,0 +1,139 @@
+.site{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr
+	grid-gap: 2em;
+
+	grid-template-areas:
+		"tp tp tp"
+		"whatis whenis understanding"
+		"wwhatis wwhenis wunderstanding"
+		"qwhatis qwhenis qunderstanding";
+}
+.h1{
+	grid-area: tp;
+
+}
+.h2-1{
+	grid-area: whatis;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-2{
+	grid-area: whenis;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-3{
+	grid-area: understanding;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-4{
+	grid-area: wwhatis;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-5{
+	grid-area: wwhenis;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-6{
+	grid-area: wunderstanding;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-7{
+	grid-area: qwhatis;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-8{
+	grid-area: qwhenis;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-9{
+	grid-area: qunderstanding;
+	margin:0.5em;
+	border: 3px solid #9AD3CC
+}
+
+.h2-10{
+	grid-area:fluimggg;
+}
+
+
+
+.site{
+	margin: 4em;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.imgset{
+	max-width:40%;
+    height: auto;
+	float:right;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.imgset1{
+	max-width:40%;
+    height: auto;
+	float:right;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+.site h1{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	background-color:#9ad3cc;
+	padding: 5px 0px
+
+}
+.site h2{
+	padding-top: 1em;
+	padding-left: 8px;
+}
+.site p{
+	padding: 8px;
+}
+.site h3{
+	width: 100%;
+	text-align: center;
+	background: #008377;
+	color: #FFF;
+	height: 65px;
+	padding: 5px;
+	font-size: 22px
+}
+
+
+@media screen and (max-width:650px) {
+	.site{
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		"tp"
+		"whatis"
+		"whenis"
+		"understanding"
+		"wwhatis"
+		"wwhenis"
+		"wunderstanding"
+		"qwhatis"
+		"qwhenis"
+		"qunderstanding";
+	}
+}

@@ -1,3 +1,6 @@
+/*By Leping Jiang Updated at 2020/04/14*/
+
+
 /*preset*/
 * {
 	box-sizing: border-box;
@@ -24,10 +27,6 @@
 	flex-direction: row-reverse;
 }
 
-.sper {
-	border-bottom: 2px solid #004F46;
-	padding-bottom: 30px;
-}
 
 .rcontainer {
 	max-width: 950px;
@@ -358,6 +357,7 @@ h6 {
 	.logo {
 		padding-top: 5px;
 		padding-right: 20px;
+		margin-left: 10px;
 		width: 120px;
 	}
 
