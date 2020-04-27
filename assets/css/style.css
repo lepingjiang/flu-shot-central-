@@ -350,6 +350,22 @@ footer div{
 	margin: 15px
 }
 
+		::-webkit-scrollbar {
+			width: 5px;
+			height: 3px;
+			border-left: 0;
+			background: rgba(245, 251, 254, 0.1);
+		}
+
+		::-webkit-scrollbar-track {
+			background: none;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #008377;
+			border-radius: 10px;
+		}
+
 
 @media screen and (max-width:960px) {
 
