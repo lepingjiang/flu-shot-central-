@@ -1,4 +1,4 @@
-/*By Leping Jiang Updated at 2020/04/25*/
+/*By Leping Jiang Updated at 2020/05/11*/
 
 
 /*preset*/
@@ -139,7 +139,7 @@ nav a:hover {
 
 .search {
 	position: relative;
-	left: 400px;
+	left: 550px;
 	top: -40px;
 }
 
@@ -365,6 +365,44 @@ footer div{
 			background: #008377;
 			border-radius: 10px;
 		}
+
+.dropbtn img{
+	width: 25px;
+	height: 25px;
+	margin: 5px 6px;
+
+}
+
+.dropbtn a{
+	width: 25px;
+	height: 25px;
+}
+
+
+.dropbtn{
+	border-radius: 25px;
+	background: #F5FBFE;
+	border: 2px solid #008377
+}
+
+
+.dropdown {
+	position:fixed;
+	z-index: 1;
+	height: 0;
+	right: 10px;
+	bottom: 250px
+}
+
+.dropdown:hover {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #fff;
+	
+}
+
 
 
 @media screen and (max-width:960px) {
@@ -602,5 +640,9 @@ footer div{
 		margin: 20px 0px;
 
 	}
+	
+	footer div{
+	margin: 0px
+}
 
 }
