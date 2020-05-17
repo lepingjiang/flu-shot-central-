@@ -350,21 +350,21 @@ footer div{
 	margin: 15px
 }
 
-		::-webkit-scrollbar {
-			width: 5px;
-			height: 3px;
-			border-left: 0;
-			background: rgba(245, 251, 254, 0.1);
-		}
+::-webkit-scrollbar {
+	width: 5px;
+	height: 3px;
+	border-left: 0;
+	background: rgba(245, 251, 254, 0.1);
+}
 
-		::-webkit-scrollbar-track {
-			background: none;
-		}
+::-webkit-scrollbar-track {
+	background: none;
+}
 
-		::-webkit-scrollbar-thumb {
-			background: #008377;
-			border-radius: 10px;
-		}
+::-webkit-scrollbar-thumb {
+	background: #008377;
+	border-radius: 10px;
+}
 
 .dropbtn img{
 	width: 25px;
@@ -401,6 +401,24 @@ footer div{
 .dropdown:hover .dropbtn {
 	background-color: #fff;
 	
+}
+
+.ssbtn{
+	height: 40px;
+	margin: 10px 0
+}
+
+.ssbtn a{
+	font-size: 24px;
+	background: #9AD3CC;
+	margin: 10px 50px;
+	padding: 10px;
+	border-radius: 10px;
+	color: #fff
+}
+
+.ssbtn a:hover{
+	background: #dfe675;
 }
 
 

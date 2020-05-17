@@ -34,6 +34,7 @@
 		.overlay div {
 			max-width: 600px;
 		}
+
 		.sidebar {
 			height: 400px;
 			overflow: hidden;
@@ -257,7 +258,7 @@
 	</div>
 
 
-<!--text-->
+	<!--text-->
 	<div class="container">
 		<div class="hpacccb tc p50" style=" width: 100%; padding-bottom: 20px">
 			Where can I get a flu vaccine?
@@ -276,25 +277,30 @@
 	<div class="container">
 		<div class="hpaccc tc p50" style=" width: 100%; padding-bottom: 20px">
 			This page was created to help you locate where you can get a flu vaccine. Make sure you get your flu shot central bandaid (include image) and spread the word on social media with the hashtag #FluShotCentral
-
+			<div class="c100 tc">
+			<div class="ssbtn" style="margin: 20px 0px 0px 0px">
+				<a href="ssmedia.html">FFC on Instagram</a>
+			</div>
+			</div>
 		</div>
 	</div>
+
 
 	<!--map-->
 	<div class="container">
 		<div id='map' class='map p10'> </div>
 	</div>
 	<div class="rcontainer">
-	<div class="c50 m10 boxing">
-	<div class="hpacccb boxtitledg" style="padding: 12px 10px">
+		<div class="c50 m10 boxing">
+			<div class="hpacccb boxtitledg" style="padding: 12px 10px">
 				Location
 			</div>
 			<div class="lactex p10">
-				Enter an adreess or zip code  and Free flu shot
+				Enter an adreess or zip code and Free flu shot
 			</div>
-	<div id="geocoder" class="geocoder p10" ></div>
-	</div>
-	
+			<div id="geocoder" class="geocoder p10"></div>
+		</div>
+
 		<div class='sidebar c50 m10'>
 			<div class='heading'>
 				<h1 class="hpacccb">Partnered locations</h1>
@@ -306,14 +312,15 @@
 
 	<!--maybe copyrighted?-->
 	<footer>
-	<div class="container tc p5">
-		<div class="c33"><a href="aboutffc.html" class="p10">About FluShotCentral.com</a></div>
-		<div class="c33"><a href="aboutteamwow.html" class="p10">About Team Wow</a></div>
-		<div class="c33"><a href="https://www.cdc.gov/flu/index.htm" class="p10">CDC</a></div>
-	</div>
-	<p class="tc a1" style="border-bottom: 1px dotted #9AD3CC">652145240 by Mary Mathis/NPR</p>
+		<div class="container tc p5">
+			<div class="c25"><a href="aboutffc.html" class="p10">About FFC</a></div>
+			<div class="c25"><a href="aboutteamwow.html" class="p10">Team Wow</a></div>
+			<div class="c25"><a href="https://www.cdc.gov/flu/index.htm" class="p10">CDC</a></div>
+			<div class="c25"><a href="ssmedia.html" class="p10">FFC on IG</a></div>
+		</div>
+		<p class="tc a1" style="border-bottom: 1px dotted #9AD3CC">652145240 by Mary Mathis/NPR</p>
 		<p class="tc a1">&copy; 2020 Flu Shot Central by Team Wow.</p>
-	</footer> 
+	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		$('#mb').click(function() {
@@ -326,8 +333,8 @@
 			}
 		});
 	</script>
-	
-		<script>
+
+	<script>
 		/* This will let you use the .remove() function later on */
 		if (!('remove' in Element.prototype)) {
 			Element.prototype.remove = function() {
